@@ -44,8 +44,8 @@ export default async function ask(content, opts = {}) {
   });
 
   const res = await fetch(url, { method: "POST", body, headers });
-
   if (!res.ok) throw new Error(res.statusText);
+
   const data = await res.json();
   return data?.choices?.[0]?.message?.content;
 }

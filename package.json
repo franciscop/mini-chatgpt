@@ -16,6 +16,9 @@
   ],
   "author": "Francisco Presencia <public@francisco.io> (https://francisco.io/)",
   "license": "MIT",
+  "files": [
+    "index.d.ts"
+  ],
   "devDependencies": {
     "dotenv": "^16.4.5"
   }
