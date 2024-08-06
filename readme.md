@@ -1,6 +1,6 @@
-# Mini ChatGPT
+# Mini ChatGPT [![npm install mini-chatgpt](https://img.shields.io/badge/npm%20install-mini--chatgpt-blue.svg)](https://www.npmjs.com/package/mini-chatgpt) [![gzip size](https://badgen.net/bundlephobia/minzip/mini-chatgpt?label=gzip&color=green)](https://github.com/franciscop/mini-chatgpt/blob/master/index.js)
 
-A tiny (< 1kb) library to talk to ChatGPT. Just ask the question and get the answer, and it loads the configuration from the environment (preferred) or manually (optional):
+A tiny (<1kb) library to talk to ChatGPT. Just ask the question and get the answer:
 
 ```js
 import ask from "./index.js";
@@ -19,15 +19,7 @@ The options can be loaded from the environment (might need [dotenv](https://www.
 | Model           | `OPENAI_MODEL`       | `model`       | `'gpt-4o-mini'`   |
 | Temperature     | `OPENAI_TEMPERATURE` | `temperature` | `0.7`             |
 
-```js
-const reply = await ask(prompt, {
-  org: "",
-  project: "",
-  key: "",
-  model: "gpt-4o-mini",
-  temperature: 0.7,
-});
-```
+From the environment (`.env`):
 
 ```js
 # Mandatory
@@ -38,4 +30,31 @@ OPENAI_KEY=
 # Optional
 OPENAI_MODEL=
 OPENAI_TEMPERATURE=
+```
+
+As the second parameter:
+
+```js
+const reply = await ask(prompt, {
+  org: "",
+  project: "",
+  key: "",
+  model: "gpt-4o-mini",
+  temperature: 0.7,
+});
+```
+
+You shouldn't be hardcoding the key in your code, but you might need to load it dynamically like in Clouflare Workers, so we allow for it to be passed as an option like this:
+
+```js
+export default {
+  async fetch(ctx, env) {
+    const reply = await ask(prompt, {
+      org: env.OPENAI_ORG,
+      project: env.OPENAI_PROJECT,
+      key: env.OPENAI_KEY,
+    });
+    // ...
+  },
+};
 ```
