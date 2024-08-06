@@ -3,7 +3,7 @@
 A tiny (<1kb) library to talk to ChatGPT. Just ask the question and get the answer:
 
 ```js
-import ask from "./index.js";
+import ask from "mini-chatgpt";
 const reply = await ask("What is the color of the sky? Single word");
 console.log(reply);
 // "Blue."
