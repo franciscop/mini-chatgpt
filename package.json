@@ -1,0 +1,22 @@
+{
+  "name": "mini-chatgpt",
+  "version": "0.1.0",
+  "description": "A tiny library to talk to ChatGPT",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {},
+  "keywords": [
+    "chatgpt",
+    "ai",
+    "mini",
+    "small",
+    "tiny",
+    "api",
+    "chat"
+  ],
+  "author": "Francisco Presencia <public@francisco.io> (https://francisco.io/)",
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
