@@ -5,7 +5,9 @@ const errors = {
   NO_KEY: `Key not defined. Add OPENAI_KEY to your environment variables, or pass the option "key"`,
 };
 
-export default async function ask(content, opts = {}) {
+const chat = {};
+
+chat.ask = async (content, opts = {}) => {
   // Environment variables in many different possible runtimes
   const env =
     typeof process !== "undefined"
@@ -37,10 +39,16 @@ export default async function ask(content, opts = {}) {
     "OpenAI-Project": project,
   };
 
+  const messages = [{ role: "user", content }];
+
+  if (chat.system) {
+    messages.push({ role: "system", content: chat.system });
+  }
+
   const body = JSON.stringify({
     model,
     temperature,
-    messages: [{ role: "user", content }],
+    messages,
   });
 
   const res = await fetch(url, { method: "POST", body, headers });
@@ -48,4 +56,6 @@ export default async function ask(content, opts = {}) {
 
   const data = await res.json();
   return data?.choices?.[0]?.message?.content;
-}
+};
+
+export default chat;

@@ -5,5 +5,15 @@ type Options = {
   model?: string;
   temperature?: number;
 };
-export default function (prompt: string, options?: Options): Promise<string>;
-export {};
+
+// type Chat = {
+//   system: string;
+//   // ask: (prompt: string, options?: Options) => Promise<string>;
+// };
+type Chat = {
+  system: string;
+  ask: (prompt: string, options?: Options) => Promise<string>;
+};
+
+declare const chat: Chat;
+export default chat;

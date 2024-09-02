@@ -3,8 +3,8 @@
 A tiny (<1kb) library to talk to ChatGPT. Just ask the question and get the answer:
 
 ```js
-import ask from "./index.js";
-const reply = await ask("What is the color of the sky? Single word");
+import chat from "./index.js";
+const reply = await chat.ask("What is the color of the sky? Single word");
 console.log(reply);
 // "Blue."
 ```
@@ -35,7 +35,7 @@ OPENAI_TEMPERATURE=
 As the second parameter:
 
 ```js
-const reply = await ask(prompt, {
+const reply = await chat.ask(prompt, {
   org: "",
   project: "",
   key: "",
@@ -49,7 +49,7 @@ You shouldn't be hardcoding the key in your code, but you might need to load it 
 ```js
 export default {
   async fetch(ctx, env) {
-    const reply = await ask(prompt, {
+    const reply = await chat.ask(prompt, {
       org: env.OPENAI_ORG,
       project: env.OPENAI_PROJECT,
       key: env.OPENAI_KEY,
@@ -57,4 +57,14 @@ export default {
     // ...
   },
 };
+```
+
+You can add a system prompt like this:
+
+```js
+import chat from "mini-chat";
+
+chat.system = "abc";
+
+const res = await chat.ask("some question");
 ```
