@@ -1,4 +1,4 @@
-# Mini ChatGPT [![npm install mini-chatgpt](https://img.shields.io/badge/npm%20install-mini--chatgpt-blue.svg)](https://www.npmjs.com/package/mini-chatgpt) [![gzip size](https://badgen.net/bundlephobia/minzip/mini-chatgpt?label=gzip&color=green)](https://github.com/franciscop/mini-chatgpt/blob/master/index.js)
+# Mini ChatGPT [![mini-chatgpt](https://img.shields.io/npm/v/mini-chatgpt?label=mini-chatgpt&color=greenlime)](https://www.npmjs.com/package/mini-chatgpt)
 
 A tiny (<1kb) library to talk to ChatGPT. Just ask the question and get the answer:
 

@@ -2,11 +2,10 @@
   "name": "mini-chatgpt",
   "version": "2.0.0",
   "description": "A tiny library to talk to ChatGPT",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "test": "check-dts"
-  },
+  "repository": "github:franciscop/mini-chatgpt",
+  "author": "Francisco Presencia <public@francisco.io> (https://francisco.io/)",
+  "funding": "https://www.paypal.me/franciscopresencia/19",
+  "license": "MIT",
   "keywords": [
     "chatgpt",
     "ai",
@@ -16,8 +15,11 @@
     "api",
     "chat"
   ],
-  "author": "Francisco Presencia <public@francisco.io> (https://francisco.io/)",
-  "license": "MIT",
+  "scripts": {
+    "test": "check-dts"
+  },
+  "main": "index.js",
+  "type": "module",
   "files": [
     "index.d.ts"
   ],
