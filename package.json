@@ -27,6 +27,7 @@
   "devDependencies": {
     "check-dts": "^0.8.2",
     "dotenv": "^16.4.5",
-    "oxlint": "^1.89.0"
+    "oxlint": "^1.89.0",
+    "typescript": "^5.9.0"
   }
 }
